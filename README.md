@@ -133,7 +133,7 @@ Allure result files are written to `allure-results/`, and the generated report i
 
 ### Key Resources
 
-- **[docs/exploratory-testing.md](docs/exploratory-testing.md)** - Comprehensive app analysis including page/element structure, user flows, readiness for automation, and identified limitations.
+- **[docs/exploratory-testing-report.md](docs/exploratory-testing-report.md)** - Comprehensive app analysis including page/element structure, user flows, readiness for automation, and identified limitations.
   - App overview and architecture
   - Page structure and element selectors
   - User flows and scenarios
@@ -163,7 +163,7 @@ Allure result files are written to `allure-results/`, and the generated report i
 ├── app/
 │   └── index.html                     # Local SUT copy used by tests
 ├── docs/
-│   ├── exploratory-testing.md         # App analysis & observations ← NEW
+│   ├── exploratory-testing-report.md  # App analysis & observations ← NEW
 │   ├── automation-approaches.md       # Architecture & decisions ← NEW
 │   ├── issues-log.md                  # Known issues & test status
 │   ├── automation-implementation-notes.md
