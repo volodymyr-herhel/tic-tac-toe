@@ -192,13 +192,6 @@ Allure result files are written to `allure-results/`, and the generated report i
 └── tsconfig.json
 ```
 
-## Why `src/pages` Instead of `tests/pages`
-
-`src/pages` is preferred because page objects are reusable framework code, not test specs. This keeps concerns separated:
-
-- `src/`: reusable automation building blocks
-- `tests/`: scenario specifications
-
 ## Helpers
 
 - `tests/helpers/testSetup.ts`: deterministic randomness seed + clean app bootstrap
