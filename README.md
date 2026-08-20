@@ -41,7 +41,7 @@ Run Chromium only:
 npm run test:chromium
 ```
 
-Run known-defect lane only (`ISSUE-005` guard):
+Run known-defect lane only (isolated known issues):
 
 ```bash
 npm run test:defects
