@@ -1,0 +1,20 @@
+services:
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    image: ttt-playwright-tests
+    container_name: ttt-playwright-tests
+    environment:
+      CI: "1"
+
+  defects:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    image: ttt-playwright-tests
+    container_name: ttt-playwright-defects
+    environment:
+      CI: "1"
+      RUN_KNOWN_DEFECTS: "1"
+    command: npm run test:defects

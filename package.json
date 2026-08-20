@@ -1,0 +1,37 @@
+{
+  "name": "test-playwright-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:defects": "cross-env RUN_KNOWN_DEFECTS=1 playwright test --project=chromium --grep \"REG-D04|REG-D13|REG-D14|REG-E06|REG-F02|REG-G05\"",
+    "test:docker:build": "docker build -f Dockerfile.test -t ttt-playwright-tests .",
+    "test:docker": "npm run test:docker:build && docker run --rm ttt-playwright-tests",
+    "test:defects:docker": "npm run test:docker:build && docker run --rm -e RUN_KNOWN_DEFECTS=1 ttt-playwright-tests npm run test:defects",
+    "test:compose": "docker compose -f docker-compose.test.yml up --build --abort-on-container-exit --exit-code-from tests tests",
+    "test:defects:compose": "docker compose -f docker-compose.test.yml up --build --abort-on-container-exit --exit-code-from defects defects",
+    "test:compose:down": "docker compose -f docker-compose.test.yml down --remove-orphans",
+    "test:cross-browser": "cross-env PW_CROSS_BROWSER=1 playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "validate:manual-refs": "node scripts/validate-manual-refs.mjs",
+    "allure:generate": "powershell -ExecutionPolicy Bypass -File ./scripts/allure-generate.ps1",
+    "allure:open": "powershell -ExecutionPolicy Bypass -File ./scripts/allure-open.ps1",
+    "report:allure": "npm run allure:generate && npm run allure:open",
+    "test:allure": "playwright test && npm run allure:generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0",
+    "allure-commandline": "^2.43.0",
+    "allure-playwright": "^3.10.2",
+    "cross-env": "^7.0.3",
+    "typescript": "^7.0.2"
+  }
+}
