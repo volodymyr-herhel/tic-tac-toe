@@ -156,6 +156,12 @@ Allure result files are written to `allure-results/`, and the generated report i
 
 - **[docs/automation-implementation-notes.md](docs/automation-implementation-notes.md)** - Implementation details and run commands.
 
+- **[docs/full-regression-test-cases.md](docs/full-regression-test-cases.md)** - Full regression catalog (`REG-*`) with module-by-module scenarios and expected results.
+
+- **[docs/test-cases-critical-flows.md](docs/test-cases-critical-flows.md)** - Atomic critical manual test cases (`TC-*`) for high-priority user journeys.
+
+- **[docs/test-plan-critical-scenarios.md](docs/test-plan-critical-scenarios.md)** - Critical scenario planning document used as the source for P0/P1 test derivation.
+
 ## Project Structure
 
 ```text
@@ -168,7 +174,9 @@ Allure result files are written to `allure-results/`, and the generated report i
 │   ├── issues-log.md                  # Known issues & test status
 │   ├── automation-implementation-notes.md
 │   ├── manual-test-cases.md
-│   └── ... (other documentation)
+│   ├── full-regression-test-cases.md
+│   ├── test-cases-critical-flows.md
+│   └── test-plan-critical-scenarios.md
 ├── src/
 │   └── pages/                         # POM classes (framework code)
 ├── tests/
